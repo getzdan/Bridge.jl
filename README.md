@@ -6,7 +6,7 @@ This package is going to replace my package https://github.com/mschauer/SDE.jl .
 
 ```Julia
 # Define a diffusion process
-immutable OrnsteinUhlenbeck  <: ContinuousTimeProcess{Float64}
+struct OrnsteinUhlenbeck  <: ContinuousTimeProcess{Float64}
     β::Float64 # drift parameter (also known as inverse relaxation time)
     σ::Float64 # diffusion parameter
     function OrnsteinUhlenbeck(β::Float64, σ::Float64)
@@ -36,7 +36,8 @@ X = euler(0.1, W, OrnsteinUhlenbeck(20., 1.))
 - [ ] Fractional Brownian motion
 - [x] Basic stochastic calculus functionality (Ito integral, quadratic variation) 
 
-The layout/api is written to be compatible with SimonDanisch's package [FixedSizeArrays.jl](https://github.com/SimonDanisch/FixedSizeArrays.jl
+The layout/api was originally written to be compatible with SimonDanisch's package [FixedSizeArrays.jl](https://github.com/SimonDanisch/FixedSizeArrays.jl). It was refactored to be compatible with [StaticArrays.jl](https://github.com/JuliaArrays/StaticArrays.jl).
+
 
 
 

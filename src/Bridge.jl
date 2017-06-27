@@ -1,7 +1,7 @@
 module Bridge
 export ContinuousTimeProcess, SamplePath
 export LinPro, PTilde, Wiener, WienerBridge, CSpline
-export sample, sample!, .., euler, euler!, eulerb,eulerb!, rungekuttab, rungekuttab!, quvar, ito, bracket, lp, llikelihood, transitionprob, girsanov
+export sample, sample!, .., euler, euler!, rungekuttab, rungekuttab!, quvar, ito, bracket, lp, llikelihood, transitionprob, girsanov
 export bridge!, bridge
 export LevyProcess, GammaProcess, GammaBridge, VarianceGammaProcess
 export BridgeProp, DHBridgeProp, FilterProp, PBridgeProp, GuidedProp, UProp, innovations, innovations!, lptilde
@@ -13,7 +13,7 @@ export ullikelihood, ullikelihoodtrapez, uinnovations!, ubridge
 using Distributions
 import Base.rand
 import Distributions: sample, sample!
-using FixedSizeArrays
+using StaticArrays
 
 include("diagonal.jl")
 include("misc.jl")
@@ -31,6 +31,6 @@ include("levy.jl")
 include("linpro.jl")
 include("timechange.jl")
 
-export FixedDiagonal
+export SDiagonal
 
 end
